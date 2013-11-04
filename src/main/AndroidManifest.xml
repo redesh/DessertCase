@@ -1,0 +1,41 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.osiris.dessertcase"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    <application
+        android:icon="@drawable/dessert_android"
+        android:label="@string/dessert_case">
+
+    <!-- platform logo easter egg activity -->
+    <activity
+        android:name=".DessertCase"
+        android:exported="true"
+        android:label="@string/dessert_case"
+        android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+        android:hardwareAccelerated="true"
+        android:launchMode="singleInstance"
+        android:screenOrientation="locked"
+        android:excludeFromRecents="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
+
+    <!-- a gallery of delicious treats -->
+    <service
+        android:name=".DessertCaseDream"
+        android:exported="true"
+        android:label="@string/dessert_case"
+        android:enabled="false"
+        >
+        <intent-filter>
+            <action android:name="android.service.dreams.DreamService" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </service>
+    </application>
+</manifest>
